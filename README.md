@@ -3,19 +3,33 @@ GraphQL React Apollo
 
 Sample GraphQL Query:
 
-Request:
-query{
-  user(id: "41"){
+
+Add new user:
+*************
+mutation{
+  addUser(firstName:"Vidarth Sastik", age:22, companyId:"2"){
+    id
     firstName
   }
 }
 
-Response:
-{
-  "data": {
-    "user": {
-      "firstName": "Nick"
+Get User name by filtering by ID:
+*********************************
+query{
+  user(id:"1nwRf7U9"){
+    firstName
+    company {
+      id
     }
+  }
+}
+
+
+Delete user bu ID:
+******************
+mutation{
+  deleteUser(id:"1nwRf7U9"){
+    firstName
   }
 }
 
